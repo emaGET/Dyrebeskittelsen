@@ -6,16 +6,30 @@ public class Cat
     public int Age { get; private set; }
     public bool AvailableForAdoption { get; private set; }
 
-    public Nuka(string name)
-    {
-        Name = name;
-    }
+    // public Cat(string name)
+    // {
+    //     Name = name;
+    //     Breed = "boh";
+    //     Age = 0;
+    //     AvailableForAdoption = true;
+    // }
 
-    public Miso(string name, string breed, int age, bool adoptable)
+    public Cat(string name, string breed = "Unknown", int age = 0)
     {
         Name = name;
         Breed = breed;
         Age = age;
-        AvailableForAdoption = adoptable;
+        AvailableForAdoption = true;
+    }
+
+    public void Adopt()
+    {
+        AvailableForAdoption = false;
+        Console.WriteLine($"{Name} has been adopted!");
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{Name}, {Breed}, {Age}, {AvailableForAdoption}.");
     }
 }
